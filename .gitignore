@@ -1,0 +1,6 @@
+*.sublime-workspace
+
+tmp-*
+
+bower_components
+node_modules

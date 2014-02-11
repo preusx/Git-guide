@@ -1,0 +1,165 @@
+<!DOCTYPE  html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    
+    <title>doc</title>
+    <style>
+      /*github.com style (c) Vasily Polovnyov <vast@whiteants.net>*/
+      pre code {
+        display: block; padding: 0.5em;
+        color: #333;
+        background: #f8f8ff
+      }
+      pre .comment,
+      pre .template_comment,
+      pre .diff .header,
+      pre .javadoc {
+        color: #998;
+        font-style: italic
+      }
+      pre .keyword,
+      pre .css .rule .keyword,
+      pre .winutils,
+      pre .javascript .title,
+      pre .nginx .title,
+      pre .subst,
+      pre .request,
+      pre .status {
+        color: #333;
+        font-weight: bold
+      }
+      pre .number,
+      pre .hexcolor,
+      pre .ruby .constant {
+        color: #099;
+      }
+      pre .string,
+      pre .tag .value,
+      pre .phpdoc,
+      pre .tex .formula {
+        color: #d14
+      }
+      pre .title,
+      pre .id {
+        color: #900;
+        font-weight: bold
+      }
+      pre .javascript .title,
+      pre .lisp .title,
+      pre .clojure .title,
+      pre .subst {
+        font-weight: normal
+      }
+      pre .class .title,
+      pre .haskell .type,
+      pre .vhdl .literal,
+      pre .tex .command {
+        color: #458;
+        font-weight: bold
+      }
+      pre .tag,
+      pre .tag .title,
+      pre .rules .property,
+      pre .django .tag .keyword {
+        color: #000080;
+        font-weight: normal
+      }
+      pre .attribute,
+      pre .variable,
+      pre .lisp .body {
+        color: #008080
+      }
+      pre .regexp {
+        color: #009926
+      }
+      pre .class {
+        color: #458;
+        font-weight: bold
+      }
+      pre .symbol,
+      pre .ruby .symbol .string,
+      pre .lisp .keyword,
+      pre .tex .special,
+      pre .prompt {
+        color: #990073
+      }
+      pre .built_in,
+      pre .lisp .title,
+      pre .clojure .built_in {
+        color: #0086b3
+      }
+      pre .preprocessor,
+      pre .pi,
+      pre .doctype,
+      pre .shebang,
+      pre .cdata {
+        color: #999;
+        font-weight: bold
+      }
+      pre .deletion {
+        background: #fdd
+      }
+      pre .addition {
+        background: #dfd
+      }
+      pre .diff .change {
+        background: #0086b3
+      }
+      pre .chunk {
+        color: #aaa
+      }
+    </style>
+  </head>
+  <body>  
+    <h1 id="git">GIT</h1>
+<p>Git — распределённая система управления версиями файлов.
+Проект был создан Линусом Торвальдсом для управления
+разработкой ядра Linux в 2005 году.</p>
+<h4 id="-">Положительные стороны</h4>
+<ul>
+<li>Высокая производительность.</li>
+<li>Развитые средства интеграции с другими VCS.</li>
+<li>Репозитории git могут распространяться и обновляться
+общесистемными файловыми утилитами, такими как rsync.</li>
+</ul>
+<h4 id="-">Негативные стороны</h4>
+<p>− Отсутствие переносимой на другие операционные системы
+поддержки путей в кодировке Unicode.
+− Команды ориентированны на наборы изменений, а не на файлы.
+− Использование для идентификации ревизий хешей SHA1.
+− Отсутствие отдельной команды переименования/переноса
+файла, которая так отображалась бы в истории.</p>
+<h2 id="-">Основные термины</h2>
+<ul>
+<li>working copy — рабочая (локальная) копия документов.</li>
+<li>repository, depot — хранилище.</li>
+<li>revision — версия документа. Новые изменения (changeset)
+создают новую ревизию репозитория.</li>
+<li>check-in, commit, submit — фиксация изменений.</li>
+<li>check-out, clone — извлечение документа из хранилища и
+создание рабочей копии.</li>
+<li>update, sync — синхронизация рабочей копии до
+некоторого заданного состояния хранилища (в т.ч. и к
+более старому состоянию, чем текущее).</li>
+<li>merge, integration — слияние независимых изменений.</li>
+<li>conflict — ситуация, когда несколько пользователей
+сделали изменения одного и того же участка документа.</li>
+<li>head — самая свежая версия (revision) в хранилище.</li>
+</ul>
+<h3 id="-">Ветвление</h3>
+<ul>
+<li>Ветвь (branch) — направление разработки проекта,
+независимое от других.</li>
+<li>Ветвь представляет собой копию части (как правило,
+одного каталога) хранилища, в которую можно вносить
+свои изменения, не влияющие на другие ветви.</li>
+<li>Документы в разных ветвях имеют одинаковую историю
+до точки ветвления и разные — после неё.</li>
+<li>Изменения из одной ветви можно переносить в другую.</li>
+<li>Ствол (trunk, mainline, master) — основная ветвь
+разработки проекта.</li>
+</ul>
+
+  </body>
+</html>

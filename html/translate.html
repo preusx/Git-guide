@@ -1,0 +1,212 @@
+<!DOCTYPE  html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    
+    <title>doc</title>
+    <style>
+      /*github.com style (c) Vasily Polovnyov <vast@whiteants.net>*/
+      pre code {
+        display: block; padding: 0.5em;
+        color: #333;
+        background: #f8f8ff
+      }
+      pre .comment,
+      pre .template_comment,
+      pre .diff .header,
+      pre .javadoc {
+        color: #998;
+        font-style: italic
+      }
+      pre .keyword,
+      pre .css .rule .keyword,
+      pre .winutils,
+      pre .javascript .title,
+      pre .nginx .title,
+      pre .subst,
+      pre .request,
+      pre .status {
+        color: #333;
+        font-weight: bold
+      }
+      pre .number,
+      pre .hexcolor,
+      pre .ruby .constant {
+        color: #099;
+      }
+      pre .string,
+      pre .tag .value,
+      pre .phpdoc,
+      pre .tex .formula {
+        color: #d14
+      }
+      pre .title,
+      pre .id {
+        color: #900;
+        font-weight: bold
+      }
+      pre .javascript .title,
+      pre .lisp .title,
+      pre .clojure .title,
+      pre .subst {
+        font-weight: normal
+      }
+      pre .class .title,
+      pre .haskell .type,
+      pre .vhdl .literal,
+      pre .tex .command {
+        color: #458;
+        font-weight: bold
+      }
+      pre .tag,
+      pre .tag .title,
+      pre .rules .property,
+      pre .django .tag .keyword {
+        color: #000080;
+        font-weight: normal
+      }
+      pre .attribute,
+      pre .variable,
+      pre .lisp .body {
+        color: #008080
+      }
+      pre .regexp {
+        color: #009926
+      }
+      pre .class {
+        color: #458;
+        font-weight: bold
+      }
+      pre .symbol,
+      pre .ruby .symbol .string,
+      pre .lisp .keyword,
+      pre .tex .special,
+      pre .prompt {
+        color: #990073
+      }
+      pre .built_in,
+      pre .lisp .title,
+      pre .clojure .built_in {
+        color: #0086b3
+      }
+      pre .preprocessor,
+      pre .pi,
+      pre .doctype,
+      pre .shebang,
+      pre .cdata {
+        color: #999;
+        font-weight: bold
+      }
+      pre .deletion {
+        background: #fdd
+      }
+      pre .addition {
+        background: #dfd
+      }
+      pre .diff .change {
+        background: #0086b3
+      }
+      pre .chunk {
+        color: #aaa
+      }
+    </style>
+  </head>
+  <body>  
+    <h1 id="git">GIT</h1>
+<h2 id="-">Что такое система управления версиями?</h2>
+<p>Система контроля версий позволяет отслеживать историю коллекции файлов и включает в себя функционал для возвращения коллекции файлов другой версии. Каждая версия захватывает снимок файлов в определенный момент времени. Набор файлов, как правило, исходный код на языке программирования, но типичная система контроля версий может работать с любым типом файлов. </p>
+<p>Набор файлов и их полная история хранятся в <strong>репозитории(repository)</strong>.</p>
+<p>Снимки могут быть использованы, чтобы изменить свою коллекцию файлов. Можно, например, возвращается в набор файлов в состояние от 2 дней назад. Или вы можете переключаться между версиями для экспериментальных функций.</p>
+<h2 id="-">Что такое распределенная система контроля версий?</h2>
+<p>Распределенная система контроля версий, не обязательно имеет центральный сервер, который хранит данные.</p>
+<p>Пользователь может скопировать существующий репозиторий. Этот процесс копирования обычно называют <strong>клонирование</strong> в распределенной системе управления версиями и полученное хранилище может упоминаться как клон.</p>
+<p>Обычно существует центральный сервер для хранения репозитория, но все клонированные хранилища являются его полной копией. Решение, какой из экземпляров считается центральным хранилищем сервер чисто выборочная и не привязаны к возможностям самой распределенной системы контроля версий.</p>
+<p>Каждый клон содержит полную историю коллекции файлов и имеет ту же функциональность, что и оригинальный репозиторий.</p>
+<p>Каждый репозиторий может обменять версии файлов с других хранилищах, транспортируя эти изменения. Обычно это делается с помощью хранилища работающего на сервере, который, кроме локальной машине разработчика, всегда он-лайн.</p>
+<h2 id="-git-">Что такое Git?</h2>
+<p>Git - это распределенная система контроля версий. </p>
+<p>Git появился в результате разработки ядра Linux и используется многими популярными Open Source проектами, например Android, а также многими коммерческими организациями.</p>
+<p>Ядро Git было изначально написано на языке программирования C, но Git также вновь реализован и на других языках, например, Java, Ruby и Python.</p>
+<h2 id="-">Локальный репозиторий и операции</h2>
+<p>После клонирования или создания хранилища пользователь имеет полную копию в хранилище. Пользователь выполняет операции управления версиями в своем локальном репозитории, например создает новые версии, отменяет изменения и т.д. </p>
+<p>Вы можете настроить хранилище быть пустими или не-пустыми. </p>
+<ul>
+<li>пустые хранилища используются на серверах для обмена изменений, поступающих от разных разработчиков.</li>
+<li>не-пустые хранилища позволяют создавать новые изменения посредством модификации файлов и создавать новые версии в репозитории.</li>
+</ul>
+<p>Если вы хотите удалить репозиторий Git, вы можете просто удалить папку, содержащую хранилище.</p>
+<h2 id="-">Сетевые репозитории</h2>
+<p>Git позволяет пользователю синхронизировать локальный репозиторий с удаленными(remote) репозиториями. </p>
+<p>Пользователи с соответствующими правами доступа могут подтолкнуть(push) изменения от их локального репозитория в удаленнй репозиторий. Они также могут принести или тянуть изменения от других хранилищ в их локальный репозиторий Git.</p>
+<h2 id="-">Создание ветвей и слияние</h2>
+<p>Git поддерживает ветвление что означает, что вы можете работать на разных версиях вашей коллекции файлов. Ветка разделяет эти различные версии и позволяет пользователю переключаться между этими версии для работы на них.</p>
+<p>Например, если вы хотите разработать новую функцию, можно создать ветку и сделать изменения в ней, не влияя на состояние ваших файлов в другой ветке.</p>
+<p>Ветки в Git являются локальными для репозиториев. Ветка созданая в локальном репозиторий, который был клонирован из другого репозитория, не обязательно имеет отражение в удаленном хранилище. Локальные ветки может сравниваться с другими локальными ветками и с удаленными ветками слежения(remote tracking branches). Удаленный ветка слежения предоставляет интерфейс состояние филиала в другом удаленном хранилище.</p>
+<p>Git поддерживает, возможность обьединения веток. Это позволяет разработчику, например, самостоятельно работать на ветке под названием production для исправления, а другая ветвь будет называться feature_123 для реализации новой функции. Разработчик может использовать Git команды объединить изменения на более поздний момент времени.</p>
+<p>Например, сообщество ядра Linux ранее использовали для обмена корректировками кода( patches) списками рассылки для объединения изменений, поступающие от разных разработчиков. Git это система, которая позволяет разработчикам автоматизировать такой процесс.</p>
+<h2 id="-">Рабочее дерево</h2>
+<p>Пользователь работает над коллекцией файлов, которые могут происходить с определенной точки времени. Пользователь может также создавать новые файлы или изменять и удалять существующие. Нынешний набор файлов называется рабочим деревом.</p>
+<p>Стандартный репозиторий Git содержит рабочее дерево и полную историю репозитория. Вы можете работать в этом рабочем дереве, изменяя содержание и фиксировать(commit) изменений в хранилище Git.</p>
+<h2 id="-git">Как добавить изменения в репозиторий Git</h2>
+<p>Если вы измените свою ​​рабочую ветку, например, путем создания нового файла или путем изменения существующего файла, вам необходимо выполнить два шага в Git для сохранения изменений в репозитории. Вы сначала добавляете выбранные файлы во промежуточную область, а потом вы фиксируете изменения из промежуточной области в репозиторий Git.</p>
+<h2 id="-">Добавление к промежуточной области</h2>
+<blockquote>
+<p>Примечание 
+Термин промежуточная область(staging area) в настоящее время более предпочтителен, чем старый термин инекс(index). Оба термина означают то же самое. </p>
+</blockquote>
+<p>Вы добавляете изменения в рабочем дереве во временную область с помощю команды <code>git add</code>. Данная команда сохраняет снимок указанных файлов в промежуточной области. </p>
+<p><code>git add</code> позволяет постепенно изменять файлы, создавая их версии, пока вы не будете удовлетворены вашими изменениями.</p>
+<h2 id="committing-to-the-">Committing to the хранилище</h2>
+<p>После добавления выбранных файлов в промежуточной области, вы можете совершить эти файлы, чтобы навсегда добавить их в хранилище Git. Совершение создает новый постоянный снимок (так называемый совершить или совершают объект) о полной рабочей дерева в репозитории Git. Объект совершить, как и все объекты в Git, являются неизменными. </p>
+<p>Промежуточная площадка отслеживает снимки файлы, пока в постановке изменения не будут приняты. </p>
+<p>За совершение поэтапного изменения, которые вы используете Git команды фиксации. </p>
+<p>Этот процесс изображен на следующем рисунке.</p>
+<h2 id="committing-commit-">Committing и commit объекты</h2>
+<p>Если вы фиксируете изменения в вашей хранилище Git , вы создаете новый совершить объект в репозитории Git. Этот объект совершить адресуется через SHA-1 контрольной суммы. Эта контрольная сумма составляет 40 байт и является безопасной хэш содержание файлов , содержание каталогов ,полная история донового коммита ,коммиттер и ряд других факторов .</p>
+<p>Это означает, что Git является безопасным, вы не можете манипулировать файлами в хранилище Git без Git заметив, что SHA-1 контрольная сумма не подходит больше к содержанию .</p>
+<p>Совершить точек объектов для отдельных файлов в этом совершить через объект дерева . Файлы хранятся в репозитории Git как объекты больших двоичных объектов и может быть упакован Git для повышения производительности и более компактного хранения . Блобы адресуются через их SHA-1 хэш.</p>
+<p>Упаковка предполагает хранение изменения как дельты , сжатия и хранения многих объектов в одном файле пакет . Упаковка файлы в сопровождении одного или нескольких индексных файлов , которые Ускорение доступа к отдельным объектам, хранящимся в этих пакетах .</p>
+<p>Объект совершить изображен на следующем рисунке </p>
+<h2 id="-">Тероминология</h2>
+<h3 id="-branch-">Ветка(Branch)</h3>
+<p>Ветка - это именованный указатель для фиксации(commit). Выбор ветки в Git терминологии называется пойти в кассу филиала. Если вы работаете в определенной отрасли, создание нового коммита авансы этот указатель, чтобы вновь созданный фиксации.</p>
+<p>Каждый совершить знает своих родителей (предшественников). Наследники извлекаются путем обхода совершить график, начиная с ветвей или других работах, символическая ссылка (например ГОЛОВА) или явное принятие объектов. Таким образом филиал определяет свою собственную линию потомков в общей версии графа, образованного все совершает в хранилище. </p>
+<p>Вы можете создать новую ветку из существующего и изменить код независимо от других ветвей. Одна из ветвей по умолчанию (обычно называется мастер). Филиал по умолчанию является тот, для которого местное отделение создается автоматически при клонировании хранилища.
+A branch is a named pointer to a commit. Selecting a branch in Git terminology is called to checkout a branch. If you are working in a certain branch, the creation of a new commit advances this pointer to the newly created commit.</p>
+<p>Each commit knows their parents (predecessors). Successors are retrieved by traversing the commit graph starting from branches or other refs, symbolic reference (e.g. HEAD) or explicit commit objects. This way a branch defines its own line of descendants in the overall version graph formed by all commits in the repository.</p>
+<p>You can create a new branch from an existing one and change the code independently from other branches. One of the branches is the default (typically named master). The default branch is the one for which a local branch is automatically created when cloning the repository.</p>
+<h3 id="commit">Commit</h3>
+<p>When you commit your changes into a repository this creates a new commit object in the Git repository. This commit object uniquely identifies a new revision of the content of the repository.</p>
+<p>This revision can be retrieved later, for example, if you want to see the source code of an older version. Each commit object contains the author and the committer, thus making it possible to identify who did the change. The author and committer might be different people. The author did the change and the committer applied the change to the Git repository.</p>
+<h3 id="head">HEAD</h3>
+<p>HEAD is a symbolic reference most often pointing to the currently checked out branch.</p>
+<p>Sometimes the HEAD points directly to a commit object, this is called detached HEAD mode. In that state creation of a commit will not move any branch.</p>
+<p>The first predecessor of HEAD can be addressed via HEAD~1, HEAD~2 and so on. If you switch branches, the HEAD pointer moves to the last commit in the branch. If you checkout a specific commit, the HEAD points to this commit.</p>
+<h3 id="index">Index</h3>
+<p>Index is an alternative term for the staging area.</p>
+<h3 id="repository">Repository</h3>
+<p>A repository contains the history, the different versions over time and all different branches and tags. In Git each copy of the repository is a complete repository. If the repository is not a bare repository, it allows you to checkout revisions into your working tree and to capture changes by creating new commits. Bare repositories are only changed by transporting changes from other repositories.</p>
+<p>This book uses the term repository to talk about a non bare repository. If it talks about a bare repository, this is explicitly mentioned.</p>
+<h3 id="revision">Revision</h3>
+<p>Represents a version of the source code. Git implements revisions as commit objects (or short commits). These are identified by an SHA-1 secure hash. SHA-1 ids are 160 bits long and are represented in hexadecimal notation.</p>
+<h3 id="staging-area">Staging area</h3>
+<p>The staging area is the place to store changes in the working tree before the commit. The staging area contains the set of the snapshots of changes in the working tree (change or new files) relevant to create the next commit and stores their mode (file type, executable bit).</p>
+<h3 id="tags">Tags</h3>
+<p>A tag points to a commit which uniquely identifies a version of the Git repository. With a tag, you can have a named point to which you can always revert to. You can revert to any point in a Git repository, but tags make it easier. The benefit of tags is to mark the repository for a specific reason e.g. with a release.</p>
+<p>Branches and tags are named pointers, the difference is that branches move when a new commit is created while tags always point to the same commit.</p>
+<p>Technically, a tag reference can also point to an annotated tag object.</p>
+<h3 id="url">URL</h3>
+<p>A URL in Git determines the location of the repository. Git distinguishes between fetchurl for getting new data from other repositories and pushurl for pushing data to another repository.</p>
+<h3 id="working-tree">Working tree</h3>
+<p>The working tree contains the set of working files for the repository. You can modify the content and commit the changes as new commits to the repository.</p>
+<h2 id="-git">Государства файлов в Git</h2>
+<p>Файл в рабочем дереве репозитория Git может иметь различные состояния. Эти состояния являются: </p>
+<ul>
+<li>неотслеживаемых: файл не отслеживаются хранилище Git, это означает, что не была ни поставлена​​, то есть добавляется к промежуточной области, ни совершил </li>
+<li>гусеничный: состою и не поставил </li>
+<li>постановщик: устроили должны быть включены в следующей фиксации </li>
+<li>грязный / изменения: файл был изменен, но изменения не устроили</li>
+</ul>
+
+  </body>
+</html>
