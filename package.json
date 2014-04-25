@@ -5,6 +5,7 @@
         "grunt": "~0.4.1",
         "grunt-newer": "latest",
         "grunt-contrib-watch": "latest",
-        "grunt-markdown": "latest"
+        "grunt-markdown": "latest",
+        "grunt-contrib-imagemin": "latest"
     }
 }
